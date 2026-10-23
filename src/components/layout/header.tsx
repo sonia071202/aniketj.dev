@@ -34,11 +34,11 @@ export function Header() {
         <m.header
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
         >
           <div className={cn(
-            "flex h-14 items-center justify-between px-6 rounded-2xl w-full max-w-4xl transition-all duration-700",
+            "flex h-14 items-center justify-between px-6 rounded-2xl w-full max-w-4xl transition-all duration-200",
             scrolled
               ? "glass-panel shadow-lg shadow-black/5 dark:shadow-black/30 gradient-border"
               : "bg-transparent border border-transparent"
