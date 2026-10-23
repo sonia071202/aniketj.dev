@@ -371,6 +371,10 @@ function buildFallbackReply(): string {
 export function getPortfolioAssistantReply(input: string): string {
   const query = normalize(input);
 
+  if (containsAny(query, ["aniket", "aniket joshi", "joshi"])) {
+    return "I can only provide information about Sonia Gupta, the owner of this portfolio. Please ask me about Sonia's skills, projects, experience, or contact details.";
+  }
+
   if (!query) {
     return buildGreetingReply();
   }
