@@ -267,12 +267,26 @@
   .avatar-bob {
     animation: avatar-bob 3.2s ease-in-out infinite;
     transform-origin: center bottom;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 0 10px color-mix(in oklab, var(--primary) 35%, transparent));
+    will-change: transform;
+  }
+
+  .avatar-bob:hover {
+    animation-play-state: paused;
+    transform: translateY(-4px) rotateY(14deg) rotateZ(2deg) scale(1.08);
+    filter: drop-shadow(0 0 16px color-mix(in oklab, var(--primary) 55%, transparent));
   }
 
   @media (prefers-reduced-motion: reduce) {
     .avatar-bob,
     .marquee-track {
       animation: none;
+      transition: none;
+    }
+
+    .avatar-bob:hover {
+      transform: none;
     }
   }
 
@@ -355,8 +369,10 @@
 }
 
 @keyframes avatar-bob {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-5px) rotate(3deg); }
+  0%, 100% { transform: translateY(0) rotateY(-5deg) rotateZ(-3deg); }
+  25% { transform: translateY(-3px) rotateY(6deg) rotateZ(1deg); }
+  50% { transform: translateY(-7px) rotateY(5deg) rotateZ(3deg); }
+  75% { transform: translateY(-3px) rotateY(-6deg) rotateZ(1deg); }
 }
 
 @keyframes float-delayed {
