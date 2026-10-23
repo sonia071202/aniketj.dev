@@ -38,7 +38,7 @@ export function Footer() {
               className="group inline-flex items-center gap-2.5"
             >
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary via-primary/80 to-ring flex items-center justify-center shadow-sm shadow-primary/20">
-                <span className="text-[9px] font-black text-primary-foreground tracking-tighter">AJ</span>
+                <img src="/images/sonia-gupta.jpg" alt="Sonia Gupta" className="h-full w-full rounded-lg object-cover" />
               </div>
               <span className="font-mono text-sm font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
                 soniagupta.dev
