@@ -1,14 +1,17 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { experience } from "@/data/experience";
 import { TechIcon } from "@/components/shared/tech-icon";
+import { SectionHeading } from "@/components/shared/section-heading";
 
 export function InternshipList() {
   return (
     <section aria-labelledby="internships-heading" className="mt-20">
-      <div className="mb-8">
-        <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">Experience</p>
-        <h2 id="internships-heading" className="text-3xl font-bold tracking-tight">Internships</h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">Hands-on experience across quality engineering, web development, and the MERN stack.</p>
+      <div id="internships-heading" className="scroll-mt-24">
+        <SectionHeading
+          title="Internships"
+          description="Hands-on experience across quality engineering, web development, and the MERN stack."
+          eyebrow="Experience"
+        />
       </div>
       <div className="grid gap-4">
         {experience.map((item) => (
