@@ -54,7 +54,11 @@ export function Header() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
-                <span className="text-[10px] font-black text-primary-foreground tracking-tighter">AJ</span>
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portrait_under_1mb-ToR80ufqRMQyIIcjzsSCkVXgao16Pm.jpg"
+                  alt="Sonia Gupta"
+                  className="h-full w-full rounded-xl object-cover"
+                />
               </m.div>
               <span className="font-mono text-sm font-semibold tracking-tight group-hover:text-primary transition-colors duration-300">
                 soniagupta.dev

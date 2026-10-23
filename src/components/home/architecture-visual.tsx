@@ -3,14 +3,14 @@
 import { m } from "motion/react";
 
 const nodes = [
-  { id: "client", label: "Client", x: 50, y: 20, icon: "📱" },
-  { id: "gateway", label: "API Gateway", x: 50, y: 38, icon: "🔀" },
-  { id: "auth", label: "Auth / IAM", x: 15, y: 55, icon: "🔐" },
-  { id: "services", label: "Microservices", x: 50, y: 58, icon: "⚙️" },
-  { id: "queue", label: "Event Queue", x: 85, y: 55, icon: "📨" },
-  { id: "db", label: "Data Layer", x: 30, y: 78, icon: "🗄️" },
-  { id: "ai", label: "AI / ML", x: 70, y: 78, icon: "🧠" },
-  { id: "cloud", label: "Cloud Infra", x: 50, y: 95, icon: "☁️" },
+  { id: "client", label: "Next.js", x: 50, y: 20, icon: "NX" },
+  { id: "gateway", label: "Node.js API", x: 50, y: 38, icon: "JS" },
+  { id: "auth", label: "Passport.js", x: 15, y: 55, icon: "PA" },
+  { id: "services", label: "Python", x: 50, y: 58, icon: "PY" },
+  { id: "queue", label: "LangChain", x: 85, y: 55, icon: "LC" },
+  { id: "db", label: "MongoDB", x: 30, y: 78, icon: "MG" },
+  { id: "ai", label: "FAISS", x: 70, y: 78, icon: "AI" },
+  { id: "cloud", label: "Cloudinary", x: 50, y: 95, icon: "CL" },
 ];
 
 const edges: [string, string][] = [
@@ -101,7 +101,7 @@ export function ArchitectureVisual() {
           className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 cursor-default"
           style={{ left: `${node.x}%`, top: `${node.y}%` }}
         >
-          <div className="h-10 w-10 rounded-xl border border-primary/25 bg-card/90 backdrop-blur-md flex items-center justify-center text-sm shadow-lg shadow-primary/5 hover:border-primary/40 hover:shadow-primary/15 transition-all duration-300">
+          <div className="h-10 w-10 rounded-xl border border-primary/25 bg-card/90 backdrop-blur-md flex items-center justify-center text-[10px] font-mono font-bold tracking-tight text-primary shadow-lg shadow-primary/5 hover:border-primary/40 hover:shadow-primary/15 transition-all duration-300">
             {node.icon}
           </div>
           <span className="text-[8px] font-mono text-muted-foreground/60 whitespace-nowrap tracking-wide">
