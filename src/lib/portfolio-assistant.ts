@@ -210,7 +210,7 @@ function getSkillCategoryMatch(
 }
 
 function buildGreetingReply(): string {
-  return "Hi! I can help with Sonia's projects, experience, skills, certifications, contact details, and site search. Try asking about WalletWeaver, Azure certifications, or his current role at Vanderlande.";
+  return "Hi! I can help with Sonia's projects, experience, skills, certifications, contact details, and site search. Try asking about WalletWeaver, Azure certifications, or her current role at Vanderlande.";
 }
 
 function buildSearchReply(): string {
@@ -218,21 +218,21 @@ function buildSearchReply(): string {
 }
 
 function buildAboutReply(): string {
-  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. He currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(DOMAINS)}.`;
+  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. She currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(DOMAINS)}.`;
 }
 
 function buildCurrentRoleReply(): string {
-  return `Sonia is currently ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company} in ${CURRENT_ROLE.location} (${CURRENT_ROLE.period}). His recent work there includes AI features on MyVanderlande, an enterprise RAG documentation search system, and a Keycloak migration on Azure.`;
+  return `Sonia is currently ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company} in ${CURRENT_ROLE.location} (${CURRENT_ROLE.period}). Her recent work there includes AI features on MyVanderlande, an enterprise RAG documentation search system, and a Keycloak migration on Azure.`;
 }
 
 function buildExperienceReply(): string {
   const companies = experience.slice(0, 5).map((item) => item.company);
 
-  return `He has 12+ years of experience across ${joinList(DOMAINS)}. Recent roles include ${joinList(companies, 5)}, and his current position is ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company}.`;
+  return `She has 12+ years of experience across ${joinList(DOMAINS)}. Recent roles include ${joinList(companies, 5)}, and her current position is ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company}.`;
 }
 
 function buildContactReply(): string {
-  return `You can reach Sonia at ${siteConfig.email}. His public profiles include GitHub (${socialLinks[0]?.username}), LinkedIn (${socialLinks[1]?.username}), X (${socialLinks[2]?.username}), and Stack Overflow (${socialLinks[3]?.username}).`;
+  return `You can reach Sonia at ${siteConfig.email}. Her public profiles include GitHub (${socialLinks[0]?.username}), LinkedIn (${socialLinks[1]?.username}), X (${socialLinks[2]?.username}), and Stack Overflow (${socialLinks[3]?.username}).`;
 }
 
 function buildResumeReply(): string {
@@ -240,7 +240,7 @@ function buildResumeReply(): string {
 }
 
 function buildDomainsReply(): string {
-  return `His work spans ${joinList(DOMAINS)}. A lot of the portfolio leans into AI, cloud architecture, and Web3 platforms with strong enterprise and systems-design depth.`;
+  return `Her work spans ${joinList(DOMAINS)}. A lot of the portfolio leans into AI, cloud architecture, and Web3 platforms with strong enterprise and systems-design depth.`;
 }
 
 function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null): string {
@@ -270,7 +270,7 @@ function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null
     return `${data?.category}: ${joinList(data?.skills ?? [], 6)}.`;
   }
 
-  return `His stack spans ${joinList(languages?.skills ?? [], 5)} for languages, ${joinList(backend?.skills ?? [], 4)} for backend, ${joinList(cloud?.skills ?? [], 5)} in cloud, ${joinList(data?.skills ?? [], 4)} for data and AI, and ${joinList(frontend?.skills ?? [], 4)} on frontend and mobile.`;
+  return `Her stack spans ${joinList(languages?.skills ?? [], 5)} for languages, ${joinList(backend?.skills ?? [], 4)} for backend, ${joinList(cloud?.skills ?? [], 5)} in cloud, ${joinList(data?.skills ?? [], 4)} for data and AI, and ${joinList(frontend?.skills ?? [], 4)} on frontend and mobile.`;
 }
 
 function buildProjectsReply(): string {
@@ -308,7 +308,7 @@ function buildProjectReply(project: Project, query: string): string {
   }
 
   if (project.highlights.length > 0) {
-    response += ` A standout detail is that he ${project.highlights[0].charAt(0).toLowerCase()}${project.highlights[0].slice(1)}.`;
+    response += ` A standout detail is that she ${project.highlights[0].charAt(0).toLowerCase()}${project.highlights[0].slice(1)}.`;
   }
 
   return response;
@@ -349,7 +349,7 @@ function buildCaseStudyReply(caseStudy: CaseStudy, query: string): string {
 }
 
 function buildCertificationsReply(): string {
-  return `He lists ${certifications.length} certifications, including six Microsoft Azure credentials, Databricks Fundamentals, and Certified Kubernetes Administrator (CKA).`;
+  return `She lists ${certifications.length} certifications, including six Microsoft Azure credentials, Databricks Fundamentals, and Certified Kubernetes Administrator (CKA).`;
 }
 
 function buildCertificationReply(certification: Certification): string {
@@ -357,7 +357,7 @@ function buildCertificationReply(certification: Certification): string {
 }
 
 function buildFallbackReply(): string {
-  return "I can answer questions about Sonia's projects, case studies, skills, certifications, work history, contact details, and site search. Try asking about SatyaStack, the Azure certifications, or his current role.";
+  return "I can answer questions about Sonia's projects, case studies, skills, certifications, work history, contact details, and site search. Try asking about SatyaStack, the Azure certifications, or her current role.";
 }
 
 export function getPortfolioAssistantReply(input: string): string {
@@ -394,7 +394,7 @@ export function getPortfolioAssistantReply(input: string): string {
     return buildAboutReply();
   }
 
-  if (containsAny(query, ["current role", "where does he work", "current company", "present role"])) {
+  if (containsAny(query, ["current role", "where does she work", "current company", "present role"])) {
     return buildCurrentRoleReply();
   }
 
