@@ -3,13 +3,13 @@ import { experience } from "@/data/experience";
 import { TechIcon } from "@/components/shared/tech-icon";
 import { SectionHeading } from "@/components/shared/section-heading";
 
-export function InternshipList() {
+export function ExperienceList() {
   return (
-    <section aria-labelledby="internships-heading" className="mt-20">
-      <div id="internships-heading" className="scroll-mt-24">
+    <section aria-labelledby="experience-heading" className="mt-20">
+      <div id="experience-heading" className="scroll-mt-24">
         <SectionHeading
-          title="Internships"
-          description="Hands-on experience across quality engineering, web development, and the MERN stack."
+          title="Experience"
+          description="Professional experience across quality engineering, web development, and the MERN stack."
           eyebrow="Experience"
         />
       </div>

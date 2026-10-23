@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/skills";
+import { CertificationsList } from "@/components/about/certifications-list";
 
 export const metadata: Metadata = {
   title: "About",
@@ -41,6 +42,9 @@ export default function AboutPage() {
             </ScrollReveal>
           ))}
         </div>
+      </SectionContainer>
+      <SectionContainer className="py-14">
+        <CertificationsList />
       </SectionContainer>
       <SectionContainer className="py-14">
         <SectionHeading title="Education" />

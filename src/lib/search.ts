@@ -19,7 +19,7 @@ const pages: SearchItem[] = [
   { id: "action-resume", title: "Download Sonia's Resume", description: "Download Sonia's resume as PDF", href: "/resume/sonia-gupta-resume.pdf", category: "action", tags: ["resume", "cv", "download", "pdf"], action: "download" },
   { id: "page-home", title: "Home", description: "Portfolio homepage", href: "/", category: "page" },
   { id: "page-about", title: "About", description: "About Sonia Gupta — background, philosophy, experience", href: "/about", category: "page" },
-  { id: "page-work", title: "Internships", description: "Sonia's internship experience and career history", href: "/work", category: "page" },
+  { id: "page-work", title: "Experience", description: "Sonia's professional experience and career history", href: "/work", category: "page" },
   { id: "page-projects", title: "Projects", description: "Featured projects and side work", href: "/projects", category: "page" },
   { id: "page-case-studies", title: "Case Studies", description: "Architecture case studies and system design", href: "/case-studies", category: "page" },
   { id: "page-contact", title: "Contact", description: "Get in touch with Sonia", href: "/contact", category: "page" },
