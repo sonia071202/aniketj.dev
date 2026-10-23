@@ -80,7 +80,7 @@
   --card-foreground: oklch(0.97 0 0);
   --popover: oklch(0.13 0.025 270 / 0.95);
   --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.72 0.22 270);
+  --primary: oklch(0.74 0.22 285);
   --primary-foreground: oklch(0.075 0.02 270);
   --secondary: oklch(0.16 0.03 270);
   --secondary-foreground: oklch(0.97 0 0);
@@ -91,7 +91,7 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.72 0.22 270);
+  --ring: oklch(0.74 0.22 285);
 }
 
 @layer base {
@@ -264,6 +264,18 @@
     background-size: 100% 2px;
   }
 
+  .avatar-bob {
+    animation: avatar-bob 3.2s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .avatar-bob,
+    .marquee-track {
+      animation: none;
+    }
+  }
+
   /* ── Bento card ── */
   .bento-card {
     @apply relative rounded-2xl border border-border/40 bg-card/30 backdrop-blur-md overflow-hidden transition-all duration-500;
@@ -340,6 +352,11 @@
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33% { transform: translateY(-18px) rotate(1deg); }
   66% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes avatar-bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
 }
 
 @keyframes float-delayed {

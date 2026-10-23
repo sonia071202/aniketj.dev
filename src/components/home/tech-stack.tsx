@@ -26,7 +26,7 @@ export function TechStack() {
   return (
     <SectionContainer>
       <SectionHeading
-        title="Tech Stack"
+        title="Tech Stack" className="section-title-hover"
         eyebrow="Tools"
         description="Technologies and tools I work with regularly"
       />
@@ -38,7 +38,7 @@ export function TechStack() {
             {row1.map((skill) => (
               <span
                 key={skill}
-                className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/30 bg-card/30 backdrop-blur-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300 whitespace-nowrap"
+                className="group inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/30 bg-card/30 backdrop-blur-sm text-muted-foreground hover:text-foreground hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 whitespace-nowrap"
               >
                 <TechIcon name={skill} />
                 {skill}
@@ -49,7 +49,7 @@ export function TechStack() {
             {row2.map((skill) => (
               <span
                 key={skill}
-                className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/30 bg-card/30 backdrop-blur-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300 whitespace-nowrap"
+                className="group inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/30 bg-card/30 backdrop-blur-sm text-muted-foreground hover:text-foreground hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 whitespace-nowrap"
               >
                 <TechIcon name={skill} />
                 {skill}

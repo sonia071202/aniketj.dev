@@ -34,6 +34,12 @@ import {
   SiTailwindcss,
   SiApachekafka,
   SiRabbitmq,
+  SiMongodb,
+  SiMysql,
+  SiHtml5,
+  SiCss,
+  SiGit,
+  SiGithub,
 } from "react-icons/si";
 import { FaAws, FaMicrosoft } from "react-icons/fa6";
 import { DiJava, DiDatabase } from "react-icons/di";
@@ -67,6 +73,14 @@ const iconMap: Record<string, IconType> = {
   "Spring Boot": SiSpringboot,
   "Node.js": SiNodedotjs,
   Express: SiExpress,
+  "Express.js": SiExpress,
+  HTML: SiHtml5,
+  CSS: SiCss,
+  EJS: TbCode,
+  MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  Git: SiGit,
+  GitHub: SiGithub,
   "GraphQL (HotChocolate)": SiGraphql,
   MediatR: TbSettings,
   DDD: TbCube,
@@ -101,6 +115,10 @@ const iconMap: Record<string, IconType> = {
   "RAG Pipelines": TbBrain,
   "Microsoft AI Services": TbRobot,
   "Agentic AI": TbRobot,
+  LangChain: TbBrain,
+  "Hugging Face Embeddings": TbBrain,
+  FAISS: TbBrain,
+  "Google Gemini API": TbBrain,
   CosmosDB: DiDatabase,
   DynamoDB: DiDatabase,
   Redis: SiRedis,
@@ -136,8 +154,36 @@ const iconMap: Record<string, IconType> = {
   APIM: TbApi,
 };
 
+const iconColors: Record<string, string> = {
+  "Python": "#3776ab",
+  "JavaScript": "#f7df1e",
+  "Java": "#ed8b00",
+  "TypeScript": "#3178c6",
+  "React": "#61dafb",
+  "Next.js": "#ffffff",
+  "Node.js": "#5fa04e",
+  "Express": "#ffffff",
+  "MongoDB": "#47a248",
+  "MySQL": "#4479a1",
+  "FAISS": "#ff6f61",
+  "LangChain": "#1c8c6c",
+  "Gemini": "#8ab4f8",
+  "Git": "#f05032",
+  "GitHub": "#ffffff",
+  "Express.js": "#ffffff",
+  "EJS": "#b4ca65",
+  "HTML": "#e34f26",
+  "CSS": "#1572b6",
+};
+
 export function TechIcon({ name }: { name: string }) {
   const Icon = iconMap[name];
   if (!Icon) return null;
-  return <Icon className="size-3.5 shrink-0 text-muted-foreground/60" />;
+  return (
+    <Icon
+      aria-hidden="true"
+      className="size-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
+      style={{ color: iconColors[name] ?? "var(--primary)" }}
+    />
+  );
 }

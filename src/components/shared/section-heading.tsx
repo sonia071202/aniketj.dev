@@ -21,7 +21,7 @@ export function SectionHeading({
           <span className="section-label">{eyebrow}</span>
         </div>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
+      <h2 className="group/title inline-flex text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] animated-underline transition-all duration-300 hover:text-gradient hover:tracking-[-0.02em]">
         {title}
       </h2>
       {description && (
