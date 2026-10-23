@@ -12,7 +12,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected projects spanning Web3, cloud infrastructure, AI systems, and enterprise platforms.",
+    "Intelligent Enterprise Knowledge Assistant and CampScout — Sonia's featured projects.",
   alternates: { canonical: "/projects" },
 };
 
@@ -25,8 +25,8 @@ export default function ProjectsPage() {
       />
       <SectionContainer className="pt-0">
         <div className="grid gap-4">
-          {projects.map((project, i) => (
-            <ScrollReveal key={project.slug} delay={i * 0.05}>
+          {projects.filter((project) => project.featured).map((project) => (
+            <ScrollReveal key={project.slug}>
               <Link href={`/projects/${project.slug}`}>
                 <div className="group bento-card rounded-xl p-7 transition-all">
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-5">
