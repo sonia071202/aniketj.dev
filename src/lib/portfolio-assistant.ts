@@ -210,7 +210,7 @@ function getSkillCategoryMatch(
 }
 
 function buildGreetingReply(): string {
-  return "Hi! I can help with Aniket's projects, experience, skills, certifications, contact details, and site search. Try asking about WalletWeaver, Azure certifications, or his current role at Vanderlande.";
+  return "Hi! I can help with Sonia's projects, experience, skills, certifications, contact details, and site search. Try asking about WalletWeaver, Azure certifications, or his current role at Vanderlande.";
 }
 
 function buildSearchReply(): string {
@@ -218,11 +218,11 @@ function buildSearchReply(): string {
 }
 
 function buildAboutReply(): string {
-  return `Aniket Joshi is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. He currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(DOMAINS)}.`;
+  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. He currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(DOMAINS)}.`;
 }
 
 function buildCurrentRoleReply(): string {
-  return `Aniket is currently ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company} in ${CURRENT_ROLE.location} (${CURRENT_ROLE.period}). His recent work there includes AI features on MyVanderlande, an enterprise RAG documentation search system, and a Keycloak migration on Azure.`;
+  return `Sonia is currently ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company} in ${CURRENT_ROLE.location} (${CURRENT_ROLE.period}). His recent work there includes AI features on MyVanderlande, an enterprise RAG documentation search system, and a Keycloak migration on Azure.`;
 }
 
 function buildExperienceReply(): string {
@@ -232,7 +232,7 @@ function buildExperienceReply(): string {
 }
 
 function buildContactReply(): string {
-  return `You can reach Aniket at ${siteConfig.email}. His public profiles include GitHub (${socialLinks[0]?.username}), LinkedIn (${socialLinks[1]?.username}), X (${socialLinks[2]?.username}), and Stack Overflow (${socialLinks[3]?.username}).`;
+  return `You can reach Sonia at ${siteConfig.email}. His public profiles include GitHub (${socialLinks[0]?.username}), LinkedIn (${socialLinks[1]?.username}), X (${socialLinks[2]?.username}), and Stack Overflow (${socialLinks[3]?.username}).`;
 }
 
 function buildResumeReply(): string {
@@ -293,7 +293,7 @@ function buildProjectReply(project: Project, query: string): string {
 
   const wantsProblem = containsAny(query, ["problem", "why", "challenge"]);
 
-  let response = `${project.title} is ${project.tagline.toLowerCase()}. Aniket worked on it as ${project.role}`;
+  let response = `${project.title} is ${project.tagline.toLowerCase()}. Sonia worked on it as ${project.role}`;
 
   if (project.company) {
     response += ` for ${project.company}`;
@@ -353,11 +353,11 @@ function buildCertificationsReply(): string {
 }
 
 function buildCertificationReply(certification: Certification): string {
-  return `${certification.name} (${certification.code}) is issued by ${certification.issuer}. It is one of the certifications highlighted on Aniket's profile.`;
+  return `${certification.name} (${certification.code}) is issued by ${certification.issuer}. It is one of the certifications highlighted on Sonia's profile.`;
 }
 
 function buildFallbackReply(): string {
-  return "I can answer questions about Aniket's projects, case studies, skills, certifications, work history, contact details, and site search. Try asking about SatyaStack, the Azure certifications, or his current role.";
+  return "I can answer questions about Sonia's projects, case studies, skills, certifications, work history, contact details, and site search. Try asking about SatyaStack, the Azure certifications, or his current role.";
 }
 
 export function getPortfolioAssistantReply(input: string): string {
@@ -419,7 +419,7 @@ export function getPortfolioAssistantReply(input: string): string {
   }
 
   if (experienceMatch && experienceMatch.score >= 24) {
-    return `${experienceMatch.item.role} at ${experienceMatch.item.company} (${experienceMatch.item.period}) is one of Aniket's roles. Key focus areas there included ${joinList(experienceMatch.item.stack, 5)}.`;
+    return `${experienceMatch.item.role} at ${experienceMatch.item.company} (${experienceMatch.item.period}) is one of Sonia's roles. Key focus areas there included ${joinList(experienceMatch.item.stack, 5)}.`;
   }
 
   if (containsAny(query, ["certification", "certified", "azure", "cka", "databricks"])) {

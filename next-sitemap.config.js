@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://aniketj.dev",
+  siteUrl: "https://soniagupta.dev",
   generateRobotsTxt: true,
   outDir: "./public",
 };

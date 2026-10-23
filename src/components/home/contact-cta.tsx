@@ -97,7 +97,7 @@ export function ContactCta() {
               </Magnetic>
               <Magnetic>
                 <a
-                  href="https://www.linkedin.com/in/aniketljoshi999"
+                  href="https://www.linkedin.com/in/sonia-gupta-a46263278/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2.5 rounded-full border border-border/50 bg-background/30 backdrop-blur-xl px-7 py-3.5 text-sm font-semibold transition-all duration-500 hover:border-primary/40 hover:scale-[1.03] gradient-border"

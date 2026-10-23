@@ -7,6 +7,6 @@ export const siteConfig: SiteConfig = {
     "Software Developer building practical software, backend systems, and intelligent applications.",
   url: "https://soniagupta.dev",
   ogImage: "/images/og/default.png",
-  email: "",
+  email: "sg2023.soniagupta@gmail.com",
   location: "Hazaribag, Jharkhand, India",
 };

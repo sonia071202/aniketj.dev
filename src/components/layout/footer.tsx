@@ -41,7 +41,7 @@ export function Footer() {
                 <span className="text-[9px] font-black text-primary-foreground tracking-tighter">AJ</span>
               </div>
               <span className="font-mono text-sm font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
-                aniketj.dev
+                soniagupta.dev
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs leading-relaxed">
@@ -118,7 +118,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border/20 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground/40">
-          <span>&copy; {new Date().getFullYear()} Aniket Joshi. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} Sonia Gupta. All rights reserved.</span>
           <span className="font-mono tracking-wider">Built with Next.js + Tailwind</span>
         </div>
       </div>

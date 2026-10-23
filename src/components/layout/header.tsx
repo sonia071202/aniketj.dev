@@ -57,7 +57,7 @@ export function Header() {
                 <span className="text-[10px] font-black text-primary-foreground tracking-tighter">AJ</span>
               </m.div>
               <span className="font-mono text-sm font-semibold tracking-tight group-hover:text-primary transition-colors duration-300">
-                aniketj.dev
+                soniagupta.dev
               </span>
             </Link>
 

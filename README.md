@@ -1,10 +1,10 @@
-# aniketj.dev
+# soniagupta.dev
 
-Personal portfolio website for **Aniket Joshi** — Software Architect with 12+ years of experience building production systems across cloud infrastructure, distributed systems, AI, and Web3.
+Personal portfolio website for **Sonia Gupta** — Software Architect with 12+ years of experience building production systems across cloud infrastructure, distributed systems, AI, and Web3.
 
 ## About
 
-This is the source code for [aniketj.dev](https://aniketj.dev), showcasing projects, case studies, certifications, and technical writing.
+This is the source code for [soniagupta.dev](https://soniagupta.dev), showcasing projects, case studies, certifications, and technical writing.
 
 ### Highlights
 

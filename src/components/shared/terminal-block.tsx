@@ -27,7 +27,7 @@ export function TerminalBlock({ lines, className }: TerminalBlockProps) {
           <div className="h-3 w-3 rounded-full bg-yellow-400/80" />
           <div className="h-3 w-3 rounded-full bg-green-400/80" />
         </div>
-        <span className="ml-2 text-[10px] text-muted-foreground/60 font-mono">~/aniketj.dev</span>
+        <span className="ml-2 text-[10px] text-muted-foreground/60 font-mono">~/soniagupta.dev</span>
       </div>
       <div className="space-y-2">
         {lines.map((line, i) => (

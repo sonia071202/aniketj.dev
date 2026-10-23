@@ -22,7 +22,7 @@ const SUGGESTIONS = [
 ];
 
 const INITIAL_MESSAGE =
-  "Hi! I'm Aniket's AI assistant. Ask me anything about his projects, experience, skills, or certifications!";
+  "Hi! I'm Sonia's AI assistant. Ask me anything about his projects, experience, skills, or certifications!";
 
 function getMessageText(msg: {
   parts?: Array<{ type: string; text?: string }>;

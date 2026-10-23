@@ -48,7 +48,7 @@ export function MobileNav() {
         </nav>
         <div className="absolute bottom-8 left-6 right-6">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-4" />
-          <p className="text-xs text-muted-foreground/50 text-center">aniketj.dev</p>
+          <p className="text-xs text-muted-foreground/50 text-center">soniagupta.dev</p>
         </div>
       </SheetContent>
     </Sheet>
