@@ -56,17 +56,6 @@ const STOP_WORDS = new Set([
 ]);
 
 const FEATURED_PROJECTS = projects.filter((project) => project.featured);
-const CURRENT_ROLE: Experience = experience.find((item) => item.current) ?? {
-  role: "Architect / Specialist Software Engineering",
-  company: "Vanderlande",
-  location: "Pune, India",
-  period: "May 2023 — Present",
-  stack: ["Java", "Spring Boot", "Azure", "Databricks", "RAG"],
-  highlights: [
-    "Spearheading AI-driven features on the MyVanderlande platform",
-    "Designed a Generative AI documentation search system with RAG pipelines",
-  ],
-};
 const DOMAINS = Array.from(
   new Set(
     [...projects, ...caseStudies]
@@ -75,10 +64,8 @@ const DOMAINS = Array.from(
   ),
 );
 
-const FALLBACK_DOMAINS = ["AI platforms", "cloud architecture", "distributed systems", "Web3"];
-
 function getDomains(): string[] {
-  return DOMAINS.length > 0 ? DOMAINS : FALLBACK_DOMAINS;
+  return DOMAINS.length > 0 ? DOMAINS : ["AI", "Ecommerce"];
 }
 
 type Match<T> = {
@@ -230,7 +217,7 @@ function getSkillCategoryMatch(
 }
 
 function buildGreetingReply(): string {
-  return "Hi! I can help with Sonia's projects, experience, skills, certifications, contact details, and site search. Try asking about WalletWeaver, Azure certifications, or her current role at Vanderlande.";
+  return "Hi! I can help with Sonia's featured projects, skills, education, contact details, and any experience listed in this portfolio.";
 }
 
 function buildSearchReply(): string {
@@ -238,17 +225,20 @@ function buildSearchReply(): string {
 }
 
 function buildAboutReply(): string {
-  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. She currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(getDomains())}.`;
+  return `Sonia Gupta is a ${"Software Developer"} based in ${siteConfig.location}. She is an MCA graduate focused on software development, backend engineering, web development, AI applications, and problem solving. Her featured work includes ${joinList(FEATURED_PROJECTS.map((project) => project.title))}.`;
 }
 
 function buildCurrentRoleReply(): string {
-  return `Sonia is currently ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company} in ${CURRENT_ROLE.location} (${CURRENT_ROLE.period}). Her recent work there includes AI features on MyVanderlande, an enterprise RAG documentation search system, and a Keycloak migration on Azure.`;
+  return `The available portfolio data identifies Sonia as ${"Software Developer"}. Her current portfolio focus is software development, backend engineering, web development, AI applications, and problem solving.`;
 }
 
 function buildExperienceReply(): string {
-  const companies = experience.slice(0, 5).map((item) => item.company);
+  if (experience.length === 0) {
+    return "Sonia's portfolio currently lists her MCA graduation and software development projects rather than a detailed employment history.";
+  }
 
-  return `She has 12+ years of experience across ${joinList(getDomains())}. Recent roles include ${joinList(companies, 5)}, and her current position is ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company}.`;
+  const companies = experience.map((item) => item.company);
+  return `Sonia's listed experience includes ${joinList(companies)}. Her role details are available in the portfolio's experience section.`;
 }
 
 function buildContactReply(): string {
@@ -256,11 +246,11 @@ function buildContactReply(): string {
 }
 
 function buildResumeReply(): string {
-  return "Use the search shortcut Ctrl/Cmd+K and choose Download Resume (Web2) or Download Resume (Web3). Those actions are already wired into the site search.";
+  return "Use the search shortcut Ctrl/Cmd+K to find Sonia's portfolio pages, projects, skills, and contact details.";
 }
 
 function buildDomainsReply(): string {
-  return `Her work spans ${joinList(getDomains())}. A lot of the portfolio leans into AI, cloud architecture, and Web3 platforms with strong enterprise and systems-design depth.`;
+  return `Sonia's listed project domains are ${joinList(getDomains())}. Her current projects focus on AI and web development.`;
 }
 
 function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null): string {
@@ -282,9 +272,13 @@ function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null
 }
 
 function buildProjectsReply(): string {
-  const featuredTitles = FEATURED_PROJECTS.map((project) => project.title);
+  if (FEATURED_PROJECTS.length === 0) {
+    return "Sonia has not marked any projects as featured yet.";
+  }
 
-  return `Featured projects include ${joinList(featuredTitles, 3)}. The wider portfolio also covers WalletWeaver, CryptoWala Exchange, enterprise RAG search, Keycloak migration, and an encryption platform for JPMorgan Chase.`;
+  return `Sonia's featured projects are: ${FEATURED_PROJECTS.map(
+    (project) => `${project.title} — ${project.tagline}. Built with ${joinList(project.stack)}.`,
+  ).join(" ")}`;
 }
 
 function buildProjectReply(project: Project, query: string): string {
@@ -323,11 +317,11 @@ function buildProjectReply(project: Project, query: string): string {
 }
 
 function buildCaseStudiesReply(): string {
-  const featuredTitles = caseStudies
-    .filter((caseStudy) => caseStudy.featured)
-    .map((caseStudy) => caseStudy.title);
+  const titles = caseStudies.map((caseStudy) => caseStudy.title);
 
-  return `Case studies on the site include ${joinList(featuredTitles, 3)} plus a compliant P2P exchange architecture deep dive. They focus on real systems, scale, compliance, and deployment tradeoffs.`;
+  return titles.length > 0
+    ? `Sonia's case studies include ${joinList(titles)}.`
+    : "Sonia's portfolio does not currently list any case studies.";
 }
 
 function buildCaseStudyReply(caseStudy: CaseStudy, query: string): string {
@@ -365,7 +359,7 @@ function buildCertificationReply(certification: Certification): string {
 }
 
 function buildFallbackReply(): string {
-  return "I can answer questions about Sonia's projects, case studies, skills, certifications, work history, contact details, and site search. Try asking about SatyaStack, the Azure certifications, or her current role.";
+  return "I can answer only from Sonia Gupta's current portfolio data: her featured projects, skills, education, contact details, and any listed experience. I won't guess or provide information about another person.";
 }
 
 export function getPortfolioAssistantReply(input: string): string {
