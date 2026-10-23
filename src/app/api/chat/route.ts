@@ -68,6 +68,8 @@ Rules:
 - For unrelated questions, politely redirect to Sonia's portfolio topics.
 - Never make up information not listed above.`;
 
+void SYSTEM_PROMPT;
+
 export async function POST(request: Request) {
   const body = await request.json();
   const messages = Array.isArray(body?.messages) ? body.messages : [];

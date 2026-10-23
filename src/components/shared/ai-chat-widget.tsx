@@ -154,8 +154,6 @@ export function AiChatWidget() {
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const timestamps = useRef<Map<string, Date>>(new Map());
-
   const { messages, sendMessage, status, setMessages } = useChat();
 
   const isBusy = status === "submitted" || status === "streaming";
@@ -178,19 +176,9 @@ export function AiChatWidget() {
     return () => window.clearTimeout(timeoutId);
   }, [isOpen]);
 
-  // Track message creation timestamps
-  useEffect(() => {
-    for (const msg of messages) {
-      if (!timestamps.current.has(msg.id)) {
-        timestamps.current.set(msg.id, new Date());
-      }
-    }
-  }, [messages]);
-
   function resetConversation() {
     setMessages([]);
     setInput("");
-    timestamps.current.clear();
     inputRef.current?.focus();
   }
 
@@ -320,7 +308,7 @@ export function AiChatWidget() {
               messages.map((message) => {
                 const text = getMessageText(message);
                 const isUser = message.role === "user";
-                const time = timestamps.current.get(message.id) ?? new Date();
+                const time = "Now";
 
                 return (
                   <div

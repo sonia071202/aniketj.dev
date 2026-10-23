@@ -26,8 +26,12 @@ const STOP_WORDS = new Set([
   "from",
   "he",
   "her",
+  "hers",
   "him",
   "his",
+  "she",
+  "women",
+  "woman",
   "how",
   "i",
   "in",
@@ -52,7 +56,17 @@ const STOP_WORDS = new Set([
 ]);
 
 const FEATURED_PROJECTS = projects.filter((project) => project.featured);
-const CURRENT_ROLE = experience.find((item) => item.current) ?? experience[0];
+const CURRENT_ROLE: Experience = experience.find((item) => item.current) ?? {
+  role: "Architect / Specialist Software Engineering",
+  company: "Vanderlande",
+  location: "Pune, India",
+  period: "May 2023 — Present",
+  stack: ["Java", "Spring Boot", "Azure", "Databricks", "RAG"],
+  highlights: [
+    "Spearheading AI-driven features on the MyVanderlande platform",
+    "Designed a Generative AI documentation search system with RAG pipelines",
+  ],
+};
 const DOMAINS = Array.from(
   new Set(
     [...projects, ...caseStudies]
@@ -60,6 +74,12 @@ const DOMAINS = Array.from(
       .filter(Boolean),
   ),
 );
+
+const FALLBACK_DOMAINS = ["AI platforms", "cloud architecture", "distributed systems", "Web3"];
+
+function getDomains(): string[] {
+  return DOMAINS.length > 0 ? DOMAINS : FALLBACK_DOMAINS;
+}
 
 type Match<T> = {
   item: T;
@@ -218,7 +238,7 @@ function buildSearchReply(): string {
 }
 
 function buildAboutReply(): string {
-  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. She currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(DOMAINS)}.`;
+  return `Sonia Gupta is a software architect based in ${siteConfig.location} with 12+ years of experience across distributed systems, cloud platforms, AI systems, and Web3 products. She currently works at ${CURRENT_ROLE.company} and has shipped projects across ${joinList(getDomains())}.`;
 }
 
 function buildCurrentRoleReply(): string {
@@ -228,7 +248,7 @@ function buildCurrentRoleReply(): string {
 function buildExperienceReply(): string {
   const companies = experience.slice(0, 5).map((item) => item.company);
 
-  return `She has 12+ years of experience across ${joinList(DOMAINS)}. Recent roles include ${joinList(companies, 5)}, and her current position is ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company}.`;
+  return `She has 12+ years of experience across ${joinList(getDomains())}. Recent roles include ${joinList(companies, 5)}, and her current position is ${CURRENT_ROLE.role} at ${CURRENT_ROLE.company}.`;
 }
 
 function buildContactReply(): string {
@@ -240,7 +260,7 @@ function buildResumeReply(): string {
 }
 
 function buildDomainsReply(): string {
-  return `Her work spans ${joinList(DOMAINS)}. A lot of the portfolio leans into AI, cloud architecture, and Web3 platforms with strong enterprise and systems-design depth.`;
+  return `Her work spans ${joinList(getDomains())}. A lot of the portfolio leans into AI, cloud architecture, and Web3 platforms with strong enterprise and systems-design depth.`;
 }
 
 function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null): string {
