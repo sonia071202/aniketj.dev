@@ -248,29 +248,17 @@ function buildSkillsReply(query: string, skillMatch: Match<SkillCategory> | null
     return `${skillMatch.item.category}: ${joinList(skillMatch.item.skills, 6)}.`;
   }
 
-  const languages = skills.find((item) => item.category === "Languages");
-  const backend = skills.find((item) => item.category === "Backend & Frameworks");
-  const cloud = skills.find((item) => item.category === "Cloud & Infrastructure");
-  const data = skills.find((item) => item.category === "Data & AI");
-  const frontend = skills.find((item) => item.category === "Frontend & Mobile");
+  const matchingCategory = skills.find((item) =>
+    containsAny(query, [item.category, ...item.skills]),
+  );
 
-  if (containsAny(query, ["frontend", "mobile", "ui"])) {
-    return `${frontend?.category}: ${joinList(frontend?.skills ?? [], 6)}.`;
+  if (matchingCategory) {
+    return `${matchingCategory.category}: ${joinList(matchingCategory.skills, 8)}.`;
   }
 
-  if (containsAny(query, ["backend", "api", "services"])) {
-    return `${backend?.category}: ${joinList(backend?.skills ?? [], 6)}.`;
-  }
-
-  if (containsAny(query, ["cloud", "infra", "devops", "kubernetes", "docker"])) {
-    return `${cloud?.category}: ${joinList(cloud?.skills ?? [], 6)}.`;
-  }
-
-  if (containsAny(query, ["ai", "data", "rag", "databricks"])) {
-    return `${data?.category}: ${joinList(data?.skills ?? [], 6)}.`;
-  }
-
-  return `Her stack spans ${joinList(languages?.skills ?? [], 5)} for languages, ${joinList(backend?.skills ?? [], 4)} for backend, ${joinList(cloud?.skills ?? [], 5)} in cloud, ${joinList(data?.skills ?? [], 4)} for data and AI, and ${joinList(frontend?.skills ?? [], 4)} on frontend and mobile.`;
+  return `Her core skills include ${skills
+    .map((item) => `${item.category} (${joinList(item.skills, 4)})`)
+    .join(", ")}.`;
 }
 
 function buildProjectsReply(): string {

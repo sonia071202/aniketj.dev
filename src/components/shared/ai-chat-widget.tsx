@@ -15,14 +15,14 @@ import { MotionDiv } from "@/components/motion";
 import { cn } from "@/lib/utils";
 
 const SUGGESTIONS = [
-  "What are his core skills?",
+  "What are her core skills?",
   "Tell me about featured projects",
-  "Where does he work now?",
-  "How can I contact him?",
+  "Where does she work now?",
+  "How can I contact her?",
 ];
 
 const INITIAL_MESSAGE =
-  "Hi! I'm Sonia's AI assistant. Ask me anything about his projects, experience, skills, or certifications!";
+  "Hi! I'm Sonia's AI assistant. Ask me anything about her projects, experience, skills, or certifications!";
 
 function getMessageText(msg: {
   parts?: Array<{ type: string; text?: string }>;

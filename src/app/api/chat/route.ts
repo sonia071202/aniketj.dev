@@ -1,5 +1,8 @@
-import { openai } from "@ai-sdk/openai";
-import { streamText, createUIMessageStreamResponse, convertToModelMessages } from "ai";
+import {
+  createUIMessageStream,
+  createUIMessageStreamResponse,
+} from "ai";
+import { getPortfolioAssistantReply } from "@/lib/portfolio-assistant";
 
 export const runtime = "edge";
 
@@ -66,18 +69,23 @@ Rules:
 - Never make up information not listed above.`;
 
 export async function POST(request: Request) {
-  const { messages } = await request.json();
+  const body = await request.json();
+  const messages = Array.isArray(body?.messages) ? body.messages : [];
+  const latestMessage = messages[messages.length - 1];
+  const prompt = latestMessage?.parts
+    ?.filter((part: { type?: string; text?: string }) => part.type === "text")
+    .map((part: { text?: string }) => part.text ?? "")
+    .join(" ") ?? "";
+  const reply = getPortfolioAssistantReply(prompt);
 
-  const modelMessages = await convertToModelMessages(messages);
-
-  const result = streamText({
-    model: openai("gpt-4o-mini"),
-    system: SYSTEM_PROMPT,
-    messages: modelMessages,
-    maxOutputTokens: 500,
+  const stream = createUIMessageStream({
+    execute: ({ writer }) => {
+      const textId = "assistant-text";
+      writer.write({ type: "text-start", id: textId });
+      writer.write({ type: "text-delta", id: textId, delta: reply });
+      writer.write({ type: "text-end", id: textId });
+    },
   });
 
-  return createUIMessageStreamResponse({
-    stream: result.toUIMessageStream(),
-  });
+  return createUIMessageStreamResponse({ stream });
 }
