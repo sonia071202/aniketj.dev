@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useMemo, type FormEvent } from "react";
 import { useChat } from "@ai-sdk/react";
+import { Sonia3DAvatar } from "@/components/shared/sonia-3d-avatar";
 import {
   Maximize2,
   Minimize2,
@@ -214,7 +215,7 @@ export function AiChatWidget() {
             className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary via-primary to-ring text-primary-foreground shadow-2xl shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-primary/40"
             aria-label="Open AI Assistant"
           >
-            <img src="/images/sonia-anime-avatar.png" alt="Sonia Gupta" className="avatar-bob h-10 w-10 rounded-full object-cover ring-2 ring-white/50 transition-transform duration-300 group-hover:scale-110" />
+            <Sonia3DAvatar className="h-10 w-10" />
             <span className="absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full border-2 border-background bg-emerald-400 shadow-[0_0_10px_rgba(74,222,128,0.7)]" />
           </button>
         </MotionDiv>
@@ -237,7 +238,7 @@ export function AiChatWidget() {
           <div className="flex items-center justify-between border-b border-border/50 bg-gradient-to-r from-primary to-ring px-4 py-3 text-primary-foreground">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/15">
-                <img src="/images/sonia-anime-avatar.png" alt="Sonia Gupta" className="avatar-bob h-8 w-8 rounded-xl object-cover" />
+                <Sonia3DAvatar className="h-8 w-8" />
               </div>
               <div>
                 <div className="text-sm font-semibold">AI Assistant</div>
@@ -292,7 +293,7 @@ export function AiChatWidget() {
                 {/* Welcome bubble */}
                 <div className="flex gap-2.5">
                   <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                    <img src="/images/sonia-anime-avatar.png" alt="Sonia Gupta" className="avatar-bob h-7 w-7 rounded-full object-cover" />
+                    <Sonia3DAvatar className="h-7 w-7" />
                   </div>
                   <div className="max-w-[85%]">
                     <div className="rounded-2xl rounded-tl-sm bg-muted/70 px-3.5 py-2.5 text-[13px] leading-relaxed text-foreground/90 shadow-sm">
@@ -330,7 +331,7 @@ export function AiChatWidget() {
                       {isUser ? (
                         <User className="h-4 w-4" />
                       ) : (
-                        <img src="/images/sonia-anime-avatar.png" alt="Sonia Gupta" className="avatar-bob h-7 w-7 rounded-full object-cover" />
+                        <Sonia3DAvatar className="h-7 w-7" />
                       )}
                     </div>
 
@@ -373,7 +374,7 @@ export function AiChatWidget() {
             {isBusy && messages[messages.length - 1]?.role !== "assistant" && (
               <div className="flex gap-2.5">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                  <img src="/images/sonia-anime-avatar.png" alt="Sonia Gupta" className="avatar-bob h-7 w-7 rounded-full object-cover" />
+                  <Sonia3DAvatar className="h-7 w-7" />
                 </div>
                 <div className="rounded-2xl rounded-tl-sm bg-muted/70 px-4 py-3 shadow-sm">
                   <div className="flex gap-1">
