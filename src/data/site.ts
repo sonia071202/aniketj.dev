@@ -1,12 +1,12 @@
 import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Aniket Joshi",
-  title: "Aniket Joshi — Software Architect",
+  name: "Sonia Gupta",
+  title: "Sonia Gupta — Software Developer",
   description:
-    "Software Architect with 12+ years building distributed systems, cloud infrastructure, AI platforms, and Web3 applications. 6x Azure Certified.",
-  url: "https://aniketj.dev",
+    "Software Developer building practical software, backend systems, and intelligent applications.",
+  url: "https://soniagupta.dev",
   ogImage: "/images/og/default.png",
-  email: "joshi.aniket@proton.me",
-  location: "Pune, India",
+  email: "",
+  location: "Hazaribag, Jharkhand, India",
 };

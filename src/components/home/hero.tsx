@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { m, useScroll, useTransform } from "motion/react";
@@ -11,9 +11,9 @@ import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { useRef } from "react";
 
 const stats = [
-  { value: "12+", label: "Years building" },
-  { value: "6x", label: "Azure certified" },
-  { value: "9", label: "Products shipped" },
+  { value: "MCA", label: "2026 graduate" },
+  { value: "2", label: "Projects shipped" },
+  { value: "5+", label: "AI and web tools" },
 ];
 
 export function Hero() {
@@ -51,7 +51,7 @@ export function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
                 </span>
-                Software Architect
+                Software Developer
               </span>
             </m.div>
 
@@ -72,7 +72,7 @@ export function Hero() {
                     animate={{ y: "0%" }}
                     transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    Aniket
+                    Sonia
                   </m.span>
                 </m.span>
                 <m.span
@@ -87,7 +87,7 @@ export function Hero() {
                     animate={{ y: "0%" }}
                     transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    Joshi
+                    Gupta
                   </m.span>
                 </m.span>
               </m.h1>
@@ -100,12 +100,10 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
               className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl"
             >
-              I design and build{" "}
-              <span className="text-foreground font-medium">distributed systems</span>,{" "}
-              <span className="text-foreground font-medium">cloud platforms</span>,{" "}
-              <span className="text-foreground font-medium">AI pipelines</span>, and{" "}
-              <span className="text-foreground font-medium">Web3 applications</span>.{" "}
-              12+ years architecting production systems across healthcare, logistics, banking, and blockchain.
+I&apos;m an MCA graduate passionate about{" "}
+              <span className="text-foreground font-medium">software development</span>,{" "}
+              <span className="text-foreground font-medium">backend engineering</span>,{" "}
+              <span className="text-foreground font-medium">AI-powered applications</span>, and problem-solving.
             </m.p>
 
             {/* CTAs */}
@@ -161,16 +159,6 @@ export function Hero() {
                   <div className="h-px w-0 bg-gradient-to-r from-primary to-transparent mt-2 group-hover:w-full transition-all duration-500" />
                 </m.div>
               ))}
-              <m.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-                className="flex flex-col group"
-              >
-                <span className="text-3xl font-bold tracking-tight text-gradient">Arch.</span>
-                <span className="text-[11px] text-muted-foreground font-mono mt-1 tracking-wide">@ Vanderlande</span>
-                <div className="h-px w-0 bg-gradient-to-r from-primary to-transparent mt-2 group-hover:w-full transition-all duration-500" />
-              </m.div>
             </m.div>
           </div>
 

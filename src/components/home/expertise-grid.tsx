@@ -17,62 +17,12 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { m } from "motion/react";
 
 const expertise = [
-  {
-    icon: Layers,
-    title: "Software Architecture",
-    description: "Distributed systems, DDD, microservices, and API design",
-    number: "01",
-    gradient: "from-violet-500/20 to-purple-500/20",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Infrastructure",
-    description: "Azure, AWS, GCP - multi-cloud design and IaC",
-    number: "02",
-    gradient: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    icon: Server,
-    title: "Backend Platforms",
-    description: ".NET, Java, Spring Boot, Node.js, GraphQL",
-    number: "03",
-    gradient: "from-emerald-500/20 to-green-500/20",
-  },
-  {
-    icon: Shield,
-    title: "Identity and Security",
-    description: "Keycloak, OAuth2, OIDC, SSO, encryption, PCI compliance",
-    number: "04",
-    gradient: "from-amber-500/20 to-yellow-500/20",
-  },
-  {
-    icon: Brain,
-    title: "AI and Data Systems",
-    description: "RAG pipelines, agentic AI, Databricks, vector search",
-    number: "05",
-    gradient: "from-pink-500/20 to-rose-500/20",
-  },
-  {
-    icon: Link2,
-    title: "Web3 and Blockchain",
-    description: "Solidity, Rust/Anchor, Solana, EVM, smart contracts",
-    number: "06",
-    gradient: "from-indigo-500/20 to-blue-500/20",
-  },
-  {
-    icon: Cpu,
-    title: "DevOps and Platform",
-    description: "K8s, Docker, CI/CD, Bicep, Terraform, observability",
-    number: "07",
-    gradient: "from-orange-500/20 to-red-500/20",
-  },
-  {
-    icon: Code2,
-    title: "Product Engineering",
-    description: "React, Next.js, Flutter, TypeScript - full-stack delivery",
-    number: "08",
-    gradient: "from-teal-500/20 to-cyan-500/20",
-  },
+  { icon: Code2, title: "Programming", description: "Python, Java, JavaScript, and SQL", number: "01", gradient: "from-violet-500/20 to-purple-500/20" },
+  { icon: Server, title: "Web Development", description: "Node.js, Express.js, HTML, CSS, and EJS", number: "02", gradient: "from-blue-500/20 to-cyan-500/20" },
+  { icon: Layers, title: "Databases", description: "MongoDB, Mongoose, and MySQL", number: "03", gradient: "from-emerald-500/20 to-green-500/20" },
+  { icon: Brain, title: "AI and Retrieval", description: "LangChain, embeddings, FAISS, and Gemini", number: "04", gradient: "from-pink-500/20 to-rose-500/20" },
+  { icon: Link2, title: "Problem Solving", description: "Data structures, algorithms, and clean solutions", number: "05", gradient: "from-indigo-500/20 to-blue-500/20" },
+  { icon: Shield, title: "Developer Tools", description: "Git, GitHub, authentication, and validation", number: "06", gradient: "from-amber-500/20 to-yellow-500/20" },
 ];
 
 export function ExpertiseGrid() {

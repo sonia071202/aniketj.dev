@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Code2, BookOpen } from "lucide-react";
 import { socialLinks } from "@/data/social";
 import { navigation } from "@/data/navigation";
 import { m } from "motion/react";
@@ -10,7 +10,8 @@ import { Magnetic } from "@/components/ui/magnetic";
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github,
   Linkedin,
-  Twitter,
+  Code2,
+  BookOpen,
 };
 
 export function Footer() {
@@ -44,8 +45,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs leading-relaxed">
-              Software Architect building across cloud, distributed systems, AI,
-              and Web3.
+              Software Developer building practical web, backend, and AI applications.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.slice(0, 3).map((link) => {
@@ -98,7 +98,7 @@ export function Footer() {
                 Send a message
               </Link>
               <a
-                href="https://www.linkedin.com/in/aniketljoshi999"
+                href="https://www.linkedin.com/in/sonia-gupta-a46263278/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 animated-underline inline-block w-fit"
@@ -106,7 +106,7 @@ export function Footer() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/aniketjoshi9999"
+                href="https://github.com/sonia071202"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 animated-underline inline-block w-fit"

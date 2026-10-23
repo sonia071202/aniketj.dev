@@ -75,8 +75,7 @@ export function ContactCta() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-5 text-muted-foreground max-w-lg mx-auto leading-relaxed text-[15px]"
             >
-              Looking for a Software Architect or want to discuss systems,
-              blockchain, or AI? I&apos;d love to connect.
+              Interested in software development, AI applications, or collaboration? I&apos;d love to connect.
             </m.p>
             <m.div
               initial={{ opacity: 0, y: 20 }}
