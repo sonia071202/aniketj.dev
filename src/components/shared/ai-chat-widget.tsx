@@ -34,8 +34,9 @@ function getMessageText(msg: {
     .join("");
 }
 
-function formatTime(date: Date): string {
-  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+function formatTime(value: Date | string): string {
+  if (typeof value === "string") return value;
+  return value.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
 /** Lightweight markdown-to-JSX renderer for chat bubbles */
