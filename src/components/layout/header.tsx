@@ -9,35 +9,26 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrollProgressBar } from "./scroll-progress";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { m, AnimatePresence } from "motion/react";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [lastY, setLastY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 40);
-      setHidden(y > lastY && y > 120);
-      setLastY(y);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastY]);
+  }, []);
 
   return (
     <>
       <ScrollProgressBar />
-      <AnimatePresence>
-        <m.header
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
-          transition={{ duration: 0.15, ease: "easeOut" }}
-          className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
-        >
-          <div className={cn(
+      <header
+        className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
+      >
+        <div className={cn(
             "flex h-14 items-center justify-between px-6 rounded-2xl w-full max-w-4xl transition-all duration-200",
             scrolled
               ? "glass-panel shadow-lg shadow-black/5 dark:shadow-black/30 gradient-border"
@@ -48,18 +39,13 @@ export function Header() {
               href="/"
               className="group relative flex items-center gap-2.5"
             >
-              <m.div
-                className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary via-primary/80 to-ring flex items-center justify-center shrink-0 shadow-md shadow-primary/20"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              >
+              <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary via-primary/80 to-ring flex items-center justify-center shrink-0 shadow-md shadow-primary/20">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/portrait_under_1mb-ToR80ufqRMQyIIcjzsSCkVXgao16Pm.jpg"
                   alt="Sonia Gupta"
                   className="h-full w-full rounded-xl object-cover"
                 />
-              </m.div>
+              </div>
               <span className="font-mono text-sm font-semibold tracking-tight group-hover:text-primary transition-colors duration-300">
                 soniagupta.dev
               </span>
@@ -80,8 +66,7 @@ export function Header() {
               <MobileNav />
             </div>
           </div>
-        </m.header>
-      </AnimatePresence>
+      </header>
     </>
   );
 }

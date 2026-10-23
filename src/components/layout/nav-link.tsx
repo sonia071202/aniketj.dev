@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { m } from "motion/react";
 
 interface NavLinkProps {
   href: string;
@@ -27,15 +26,7 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
         className
       )}
     >
-      {isActive && (
-        <m.span
-          layoutId="nav-pill"
-          className="absolute inset-0 rounded-lg bg-primary/10 dark:bg-primary/15"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1 }}
-        />
-      )}
+      {isActive && <span className="absolute inset-0 rounded-lg bg-primary/10 dark:bg-primary/15" aria-hidden="true" />}
       <span className="relative z-10">{children}</span>
     </Link>
   );
