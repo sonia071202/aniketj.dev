@@ -26,7 +26,9 @@ export default function AboutPage() {
         </ScrollReveal>
       </SectionContainer>
       <SectionContainer className="py-14">
-        <SectionHeading title="Skills" description="Technologies and concepts I use to build practical software." />
+        <div id="skills" className="scroll-mt-24">
+          <SectionHeading title="Skills" description="Technologies and concepts I use to build practical software." />
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skills.map((category, i) => (
             <ScrollReveal key={category.category} delay={i * 0.05}>

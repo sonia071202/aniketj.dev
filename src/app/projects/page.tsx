@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader
+<PageHeader
         title="Projects"
-        description="Selected work across Web3, cloud architecture, AI, and enterprise systems."
+        description="Selected software projects, from AI systems to full-stack platforms."
       />
       <SectionContainer className="pt-0">
         <div className="grid gap-4">

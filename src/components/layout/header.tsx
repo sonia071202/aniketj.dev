@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { navigation } from "@/data/navigation";
+import { Download } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -66,7 +67,8 @@ export function Header() {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-0.5">
+            <a href="/resume/sonia-gupta-resume.pdf" download className="hidden items-center gap-2 rounded-full border border-primary/30 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10 sm:inline-flex"><Download className="size-3.5" aria-hidden="true" />Resume</a>
+        <nav className="hidden md:flex items-center gap-0.5">
               {navigation.map((item) => (
                 <NavLink key={item.href} href={item.href}>
                   {item.label}

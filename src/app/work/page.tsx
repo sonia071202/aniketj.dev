@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/page-header";
 import { SectionContainer } from "@/components/shared/section-container";
-import { WorkGrid } from "@/components/work/work-grid";
-import { projects } from "@/data/projects";
-import { caseStudies } from "@/data/case-studies";
+import { InternshipList } from "@/components/work/internship-list";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Architecture deep-dives, projects, and case studies across Web3, cloud infrastructure, AI, and enterprise platforms.",
+  title: "Internships",
+  description: "Sonia's internship experience across quality engineering, web development, and MERN stack development.",
   alternates: { canonical: "/work" },
 };
 
@@ -16,11 +13,11 @@ export default function WorkPage() {
   return (
     <>
       <PageHeader
-        title="Work"
-        description="Projects and architecture case studies — from system design to production outcomes."
+        title="Internships"
+        description="Hands-on experience across quality engineering, web development, and full-stack development."
       />
       <SectionContainer className="pt-0">
-        <WorkGrid projects={projects} caseStudies={caseStudies} />
+        <InternshipList />
       </SectionContainer>
     </>
   );

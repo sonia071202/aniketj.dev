@@ -16,11 +16,10 @@ export interface SearchItem {
 
 const pages: SearchItem[] = [
   { id: "action-ai-chat", title: "AI Assistant", description: "Ask Sonia's AI assistant about her experience, projects, or skills", href: "#", category: "action", tags: ["ai", "chat", "assistant", "ask", "help"], action: "ai-chat" },
-  { id: "action-resume-web2", title: "Download Resume (Web2)", description: "Download Sonia's Web2 resume as PDF", href: "/resume/sonia-gupta-web2.pdf", category: "action", tags: ["resume", "cv", "download", "pdf"], action: "download" },
-  { id: "action-resume-web3", title: "Download Resume (Web3)", description: "Download Sonia's Web3 resume as PDF", href: "/resume/sonia-gupta-web3.pdf", category: "action", tags: ["resume", "cv", "download", "pdf", "blockchain"], action: "download" },
+  { id: "action-resume", title: "Download Sonia's Resume", description: "Download Sonia's resume as PDF", href: "/resume/sonia-gupta-resume.pdf", category: "action", tags: ["resume", "cv", "download", "pdf"], action: "download" },
   { id: "page-home", title: "Home", description: "Portfolio homepage", href: "/", category: "page" },
   { id: "page-about", title: "About", description: "About Sonia Gupta — background, philosophy, experience", href: "/about", category: "page" },
-  { id: "page-work", title: "Work Experience", description: "Professional experience and career history", href: "/work", category: "page" },
+  { id: "page-work", title: "Internships", description: "Sonia's internship experience and career history", href: "/work", category: "page" },
   { id: "page-projects", title: "Projects", description: "Featured projects and side work", href: "/projects", category: "page" },
   { id: "page-case-studies", title: "Case Studies", description: "Architecture case studies and system design", href: "/case-studies", category: "page" },
   { id: "page-contact", title: "Contact", description: "Get in touch with Sonia", href: "/contact", category: "page" },
