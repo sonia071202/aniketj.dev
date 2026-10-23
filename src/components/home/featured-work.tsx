@@ -21,7 +21,7 @@ export function FeaturedWork() {
       <SectionHeading
         title="Featured Work"
         eyebrow="Portfolio"
-        description="Selected projects with architecture deep-dives"
+        description="Enterprise applications and platforms built with modern software engineering practices"
       />
       <div className="grid gap-5">
         {featured.map((project, i) => {
@@ -30,7 +30,7 @@ export function FeaturedWork() {
           );
           return (
             <ScrollReveal key={project.slug} delay={i * 0.1}>
-              <Link href="/work">
+              <Link href="/projects">
                 <SpotlightCard className="group bento-card rounded-2xl overflow-hidden">
                   <div className="relative p-7 sm:p-9">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-ring/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -104,7 +104,7 @@ export function FeaturedWork() {
           href="/work"
           className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
         >
-          View all work
+          View all projects
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
