@@ -138,7 +138,7 @@ export function CommandPalette() {
               Search
             </DialogPrimitive.Title>
             <DialogPrimitive.Description className="sr-only">
-              Search across pages, projects, blog posts, and more
+              Search across pages, projects, skills, and more
             </DialogPrimitive.Description>
 
             {/* Search input */}

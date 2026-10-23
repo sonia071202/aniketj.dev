@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ChevronDown, ChevronUp, ExternalLink, Filter } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Filter } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -246,15 +245,7 @@ export function WorkGrid({ projects, caseStudies }: WorkGridProps) {
                       </div>
                     </div>
 
-                    {/* Related blog post link */}
-                    {project.relatedBlog && (
-                      <Link
-                        href={`/blog/${project.relatedBlog}`}
-                        className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-                      >
-                        Read the deep-dive <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    )}
+
 
                     {/* Action links */}
                     <div className="flex flex-wrap gap-3 pt-2">

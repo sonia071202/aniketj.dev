@@ -22,7 +22,6 @@ const pages: SearchItem[] = [
   { id: "page-about", title: "About", description: "About Sonia Gupta — background, philosophy, experience", href: "/about", category: "page" },
   { id: "page-work", title: "Work Experience", description: "Professional experience and career history", href: "/work", category: "page" },
   { id: "page-projects", title: "Projects", description: "Featured projects and side work", href: "/projects", category: "page" },
-  { id: "page-blog", title: "Blog", description: "Technical articles and architecture deep-dives", href: "/blog", category: "page" },
   { id: "page-case-studies", title: "Case Studies", description: "Architecture case studies and system design", href: "/case-studies", category: "page" },
   { id: "page-contact", title: "Contact", description: "Get in touch with Sonia", href: "/contact", category: "page" },
 ];
