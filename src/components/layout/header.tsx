@@ -6,7 +6,6 @@ import { Download } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { CommandPalette } from "@/components/shared/command-palette";
 import { ScrollProgressBar } from "./scroll-progress";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -77,7 +76,6 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-1">
-              <CommandPalette />
               <ThemeToggle />
               <MobileNav />
             </div>
