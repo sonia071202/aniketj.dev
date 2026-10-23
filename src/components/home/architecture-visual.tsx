@@ -1,6 +1,5 @@
 "use client";
 
-import { MotionDiv } from "@/components/motion";
 import { m } from "motion/react";
 
 const nodes = [
@@ -50,23 +49,18 @@ export function ArchitectureVisual() {
           const a = getNode(from);
           const b = getNode(to);
           return (
-            <MotionDiv
+            <m.line
               key={`${from}-${to}`}
+              x1={a.x}
+              y1={a.y}
+              x2={b.x}
+              y2={b.y}
+              stroke="url(#edge-gradient)"
+              strokeWidth="0.3"
+              strokeDasharray="1.5 1"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 0.35 }}
               transition={{ duration: 1, delay: 0.8 + i * 0.1, ease: "easeOut" }}
-              // @ts-expect-error motion renders as svg child
-              render={
-                <line
-                  x1={a.x}
-                  y1={a.y}
-                  x2={b.x}
-                  y2={b.y}
-                  stroke="url(#edge-gradient)"
-                  strokeWidth="0.3"
-                  strokeDasharray="1.5 1"
-                />
-              }
             />
           );
         })}
