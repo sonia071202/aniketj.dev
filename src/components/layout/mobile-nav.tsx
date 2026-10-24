@@ -28,7 +28,7 @@ export function MobileNav() {
       <SheetContent side="right" className="w-80 border-l-border/50 bg-background/95 backdrop-blur-xl">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <nav className="flex flex-col gap-2 mt-12">
-          {navigation.map((item, i) => (
+          {navigation.map((item) => (
             <div key={item.href}>
               <NavLink
                 href={item.href}
