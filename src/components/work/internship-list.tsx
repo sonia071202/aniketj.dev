@@ -10,7 +10,6 @@ export function ExperienceList() {
         <SectionHeading
           title="Experience"
           description="Professional experience across quality engineering, web development, and the MERN stack."
-          eyebrow="Experience"
         />
       </div>
       <div className="grid gap-4">

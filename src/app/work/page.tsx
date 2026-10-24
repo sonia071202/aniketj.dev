@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/page-header";
 import { SectionContainer } from "@/components/shared/section-container";
 import { ExperienceList } from "@/components/work/internship-list";
 
@@ -12,11 +11,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <PageHeader
-        title="Experience"
-        description="Professional experience across quality engineering, web development, and full-stack development."
-      />
-      <SectionContainer className="pt-0">
+      <SectionContainer className="pt-14 pb-24">
         <ExperienceList />
       </SectionContainer>
     </>
