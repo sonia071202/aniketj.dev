@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -48,7 +48,7 @@ export function MobileNav() {
         </nav>
         <div className="absolute bottom-8 left-6 right-6">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-4" />
-          <p className="text-xs text-muted-foreground/50 text-center">soniagupta.dev</p>
+          <p className="text-xs text-muted-foreground/50 text-center">Sonia Gupta</p>
         </div>
       </SheetContent>
     </Sheet>

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Github, Linkedin, Code2, BookOpen } from "lucide-react";
 import { socialLinks } from "@/data/social";
 import { navigation } from "@/data/navigation";
-import { m } from "motion/react";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -41,7 +40,7 @@ export function Footer() {
                 <img src="/images/sonia-gupta.jpg" alt="Sonia Gupta" className="h-full w-full rounded-lg object-cover" />
               </div>
               <span className="font-mono text-sm font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
-                soniagupta.dev
+                Sonia Gupta
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs leading-relaxed">

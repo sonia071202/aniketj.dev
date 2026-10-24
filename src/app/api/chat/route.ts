@@ -12,7 +12,7 @@ const SYSTEM_PROMPT = `You are the portfolio assistant for Sonia Gupta's website
 - Software Architect with 12+ years of experience building distributed systems, cloud infrastructure, AI platforms, and Web3 applications
 - Location: Pune, India
 - Email: sg2023.soniagupta@gmail.com
-- Website: https://soniagupta.dev
+- Website: Sonia Gupta's portfolio
 - 6x Azure Certified, plus CKA and Databricks certifications
 - GitHub: github.com/soniagupta | LinkedIn: linkedin.com/in/sonia-gupta-a46263278/ | X: linkedin.com/in/sonia-gupta-a46263278/
 
@@ -59,7 +59,7 @@ const SYSTEM_PROMPT = `You are the portfolio assistant for Sonia Gupta's website
 - Databricks Fundamentals Accreditation
 - CKA (Certified Kubernetes Administrator)
 
-**Contact:** Direct people to https://soniagupta.dev/contact or email sg2023.soniagupta@gmail.com.
+**Contact:** Direct people to the Contact page or email sg2023.soniagupta@gmail.com.
 **Resume:** Sonia's resume is available to download at /resume/sonia-gupta-resume.pdf.
 
 Rules:

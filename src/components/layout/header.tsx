@@ -47,7 +47,7 @@ export function Header() {
                 />
               </div>
               <span className="font-mono text-sm font-semibold tracking-tight group-hover:text-primary transition-colors duration-300">
-                soniagupta.dev
+                Sonia Gupta
               </span>
             </Link>
 
