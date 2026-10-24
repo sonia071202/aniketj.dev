@@ -9,4 +9,3 @@ export const MotionSpan = forwardRef<HTMLSpanElement, HTMLMotionProps<"span">>(
 );
 MotionSpan.displayName = "MotionSpan";
 
-export { MotionSpan as default };
