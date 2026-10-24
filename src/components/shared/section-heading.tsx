@@ -1,3 +1,6 @@
+"use client";
+
+import { m } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
@@ -21,12 +24,33 @@ export function SectionHeading({
           <span className="section-label">{eyebrow}</span>
         </div>
       )}
-      <h2 className="group/title inline-flex text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] animated-underline transition-all duration-300 hover:text-gradient hover:tracking-[-0.02em]">
+      <m.h2
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.28, ease: "easeOut" }}
+        className="group/title inline-flex text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] animated-underline transition-colors duration-150 hover:text-gradient"
+      >
         {title}
-      </h2>
+      </m.h2>
       {description && (
-        <p className="mt-4 text-muted-foreground max-w-2xl text-[15px] leading-relaxed">{description}</p>
+        <m.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.22, delay: 0.04, ease: "easeOut" }}
+          className="mt-4 text-muted-foreground max-w-2xl text-[15px] leading-relaxed"
+        >
+          {description}
+        </m.p>
       )}
+      <m.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.32, delay: 0.08, ease: "easeOut" }}
+        className="mt-8 h-px origin-left bg-gradient-to-r from-primary/50 via-border to-transparent"
+      />
     </div>
   );
 }
