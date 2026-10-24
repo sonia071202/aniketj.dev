@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -16,9 +15,8 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
   const isActive = pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <Link
+    <a
       href={href}
-      prefetch
       onClick={onClick}
       className={cn(
         "relative px-3.5 py-2 text-sm font-medium transition-colors duration-75 rounded-lg",
@@ -28,6 +26,6 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
     >
       {isActive && <span className="absolute inset-0 rounded-lg bg-primary/10 dark:bg-primary/15" aria-hidden="true" />}
       <span className="relative z-10">{children}</span>
-    </Link>
+    </a>
   );
 }
