@@ -1,4 +1,5 @@
-import type { Root, Code } from "mdast";
+type Code = { type: "code"; lang?: string | null; value: string };
+type Root = { children: Array<Code | Record<string, unknown>> };
 
 /**
  * Remark plugin that transforms ```mermaid code blocks into
@@ -13,18 +14,18 @@ export function remarkMermaid() {
       if (node.type === "code" && node.lang === "mermaid") {
         const code = node as Code;
         children[i] = {
-          type: "mdxJsxFlowElement" as any,
+          type: "mdxJsxFlowElement",
           name: "Mermaid",
           attributes: [
             {
-              type: "mdxJsxAttribute" as any,
+              type: "mdxJsxAttribute",
               name: "chart",
               value: code.value,
             },
           ],
           children: [],
           data: { _mdxExplicitJsx: true },
-        } as any;
+        } as unknown as Root["children"][number];
       }
     }
   };
