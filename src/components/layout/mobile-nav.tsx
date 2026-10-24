@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/sheet";
 import { navigation } from "@/data/navigation";
 import { NavLink } from "./nav-link";
-import { MotionDiv } from "@/components/motion";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -30,12 +29,7 @@ export function MobileNav() {
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <nav className="flex flex-col gap-2 mt-12">
           {navigation.map((item, i) => (
-            <MotionDiv
-              key={item.href}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
-            >
+            <div key={item.href}>
               <NavLink
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -43,7 +37,7 @@ export function MobileNav() {
               >
                 {item.label}
               </NavLink>
-            </MotionDiv>
+            </div>
           ))}
         </nav>
         <div className="absolute bottom-8 left-6 right-6">
