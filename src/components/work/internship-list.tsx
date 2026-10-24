@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 
 export function ExperienceList() {
   return (
-    <section aria-labelledby="experience-heading" className="mt-20">
+    <section aria-labelledby="experience-heading" className="mt-0">
       <div id="experience-heading" className="scroll-mt-24">
         <SectionHeading
           title="Experience"
