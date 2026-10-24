@@ -11,10 +11,10 @@ interface ScrollRevealProps {
 }
 
 const directionMap = {
-  up: { y: 40 },
-  down: { y: -40 },
-  left: { x: 40 },
-  right: { x: -40 },
+  up: { y: 12 },
+  down: { y: -12 },
+  left: { x: 12 },
+  right: { x: -12 },
 };
 
 export function ScrollReveal({
@@ -32,7 +32,7 @@ export function ScrollReveal({
       initial={initial}
       whileInView={animate}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.18, delay: Math.min(delay, 0.04), ease: "easeOut" }}
     >
       {children}
     </m.div>
